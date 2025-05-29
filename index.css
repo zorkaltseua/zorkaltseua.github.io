@@ -1,43 +1,81 @@
-html,
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow: hidden; /* Убираем скролл */
+}
 body {
-width: 100%;
-height: 100%;
-margin: 0;
-padding: 0;
+    background: url('fara.png') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
 }
-div {
-width: 100px;
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(139, 0, 0, 0.7); /* Темно-красный с прозрачностью */
+    z-index: -1;
 }
-.container{
-width: 100%;
-height: 100px;
+.fullscreen-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 30px;
+    padding: 20px;
 }
-.bok {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: darkred;
-    width: 25%;
-    height: 900%;
-    float: left;
-}
-.ones,
-.uslg,
-.cont{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 1.8em;
-    text-align:center;
-}
-.glav{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 2em;
+.menu-item {
     text-align: center;
-    color: firebrick;
-    display: block;
-    padding: 0px;
-    width: 95%;
-    border-style:double;
+    padding: 20px;
     border-radius: 30px;
-    color:black;
-    overflow: hidden;
-    background-color:#E2725B;
-    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+    width: 80%;
+    max-width: 500px;
+    cursor: pointer;
+}
+.glav {
+    font-size: 2.5em;
+    color: black;
+    border-style: double;
+    background-color: #E2725B;
+}
+.ones, .uslg, .cont {
+    font-size: 2em;
+    background-color: rgba(226, 114, 91, 0.7);
+}
+.menu-item a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/* Эффекты при наведении */
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+/* Адаптивность */
+@media (max-width: 768px) {
+    .menu-item {
+        width: 90%;
+        padding: 15px;
+        font-size: 1.8em;
+    }
+}
+@media (max-width: 480px) {
+    .menu-item {
+        width: 95%;
+        padding: 12px;
+        font-size: 1.5em;
+    }
+    .glav {
+        font-size: 2em;
+    }
 }
