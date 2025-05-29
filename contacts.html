@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DET AUTO - Контакты</title>
+    <title>DET AUTO</title>
     <link rel="icon" href="../items2.jpg" type="image/jpg">
     <link href="contacts.css" type="text/css" rel="stylesheet">
+    <script>
+    function toggleTheme() {
+        document.body.classList.toggle('light-theme');
+        localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+    }
+    
+    // При загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    });
+</script>
 </head>
 <body>
     <div class="container">
@@ -15,7 +28,6 @@
             <div class="ones"><a href="onas.html">О нас</a></div>
             <div class="uslg"><a href="uslugi.html">Услуги</a></div>
         </div>
-        
         <div class="contact-section">
             <div class="contact-info">
                 <div class="contact-item">
@@ -37,6 +49,7 @@
                 </div>
             </div>
         </div>
+        <button onclick="toggleTheme()" class="theme-toggle">Переключить тему</button>
     </div>
 </body>
 </html>

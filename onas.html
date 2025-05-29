@@ -4,16 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DET AUTO</title>
-    <link href="items2.jpg" type="image/jpg" rel="shortcut icon">
-    <link href="onas.css" type="text/css" rel="stylesheet"
+    <link rel="icon" href="../items2.jpg" type="image/jpg">
+    <link href="onas.css" type="text/css" rel="stylesheet">
+    <script>
+    function toggleTheme() {
+        document.body.classList.toggle('light-theme');
+        localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+    }
+    
+    // При загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    });
+</script>
 </head>
 <body>
-    <div class="bok">
-        <div class="ones"><strong>О нас</strong></div>
-        <div class="uslg"><a href="uslugi.html">Услуги</a></div>
-        <div class="cont"><a href="contacts.html">Контакты</a></div>
-        <div class="glav"><a href="../index.html">Главная</a></div>
+    <div class="container">
+        <div class="bok">
+            <div class="cont"><strong>О нас</strong></div>
+            <div class="uslg"><a href="uslugi.html">Услуги</a></div>
+            <div class="ones"><a href="contacts.html">Контакты</a></div>
+            <div class="glav"><a href="../index.html">Главная</a></div>
+        </div>
+        <div class="about-section">
+            <div class="about-content">
+                <h1>О нашей компании</h1>
+                <p>DET AUTO - это профессиональный автосервис с многолетним опытом работы. Мы специализируемся на комплексном обслуживании и ремонте автомобилей всех марок.</p>
+                <h2>Наши преимущества:</h2>
+                <ul>
+                    <li>Опытные мастера с профессиональным оборудованием</li>
+                    <li>Гарантия на все виды работ</li>
+                    <li>Использование только качественных запчастей</li>
+                    <li>Прозрачное ценообразование</li>
+                    <li>Удобное расположение в центре города</li>
+                </ul>
+            </div>
+        </div>
+        <button onclick="toggleTheme()" class="theme-toggle">Переключить тему</button>
     </div>
-    <div class="osn"></div>
 </body>
 </html>
