@@ -1,0 +1,266 @@
+﻿html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Темная тема */
+body.dark-theme {
+    color: #f5f5f5;
+}
+body.dark-theme .bok {
+    background-color: #121212;
+}
+body.dark-theme .services-section::before {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+body.dark-theme .uslg,
+body.dark-theme .glav,
+body.dark-theme .ones,
+body.dark-theme .cont, 
+body.dark-theme .otzv,
+body.dark-theme .rasch{
+    background-color: rgba(50, 50, 50, 0.9);
+}
+body.dark-theme .glav a,
+body.dark-theme .ones a,
+body.dark-theme .cont a,
+body.dark-theme .otzv a,
+body.dark-theme .rasch a{
+    color: #f5f5f5;
+}
+body.dark-theme .service-card {
+    background-color: rgba(50, 50, 50, 0.9);
+}
+body.dark-theme .service-card h2,
+body.dark-theme .service-card p {
+    color: #f5f5f5;
+}
+body.dark-theme .services-title {
+    color: #f5f5f5;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.bok {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: darkred;
+    width: 25%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    transition: background-color 0.3s;
+}
+
+.uslg {
+    font-size: 2em;
+    text-align: center;
+    color: black;
+    display: block;
+    padding: 15px;
+    width: 95%;
+    border-style: double;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #E2725B;
+    text-overflow: ellipsis;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.glav,
+.ones,
+.cont,
+.otzv,
+.rasch {
+    font-size: 1.8em;
+    text-align: center;
+    background-color: rgba(226, 114, 91, 0.7);
+    padding: 15px;
+    border-radius: 30px;
+    width: 95%;
+    transition: background-color 0.3s;
+}
+
+.glav a,
+.ones a,
+.cont a,
+.otzv a,
+.rasch a{
+    color: black;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+}
+
+.services-section {
+    flex: 1;
+    background: url('../images/fara.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    overflow-y: auto;
+}
+
+.services-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(139, 0, 0, 0.5);
+    z-index: 0;
+    transition: background-color 0.3s;
+}
+
+.services-title {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.services-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.service-card {
+    background-color: rgba(226, 114, 91, 0.9);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.service-card h2 {
+    color: #000;
+    font-size: 1.5em;
+    margin: 10px 0;
+    transition: color 0.3s;
+}
+
+.service-card p {
+    color: #000;
+    font-size: 1.1em;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.price {
+    background-color: darkred;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: auto;
+    transition: background-color 0.3s;
+}
+
+/* Кнопка переключения темы */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(226, 114, 91, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    z-index: 100;
+}
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+.dark-icon {
+    display: none;
+}
+.dark-theme .light-icon {
+    display: none;
+}
+.dark-theme .dark-icon {
+    display: block;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .bok {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+
+    .services-title {
+        font-size: 2em;
+    }
+    
+    .theme-toggle {
+        top: 15px;
+        right: 15px;
+    }
+}
+@media (max-width: 480px) {
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
+}
