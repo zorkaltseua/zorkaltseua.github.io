@@ -1,34 +1,27 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DET AUTO</title>
-    <link rel="icon" href="../items2.jpg" type="image/jpg">
+    <title>DET AUTO - Контакты</title>
+    <link rel="icon" href="../images/items2.jpg" type="image/jpg">
     <link href="contacts.css" type="text/css" rel="stylesheet">
-    <script>
-    function toggleTheme() {
-        document.body.classList.toggle('light-theme');
-        localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
-    }
-    
-    // При загрузке страницы
-    document.addEventListener('DOMContentLoaded', function() {
-        if (localStorage.getItem('theme') === 'light') {
-            document.body.classList.add('light-theme');
-        }
-    });
-</script>
 </head>
 <body>
     <div class="container">
         <div class="bok">
             <div class="cont"><strong>Контакты</strong></div>
+            <div class="otzv"><a href="otzyv.html">Отзывы</a></div>
             <div class="glav"><a href="../index.html">Главная</a></div>
             <div class="ones"><a href="onas.html">О нас</a></div>
             <div class="uslg"><a href="uslugi.html">Услуги</a></div>
+            <div class="rasch"><a href="raschet.html">Калькулятор</a></div>
         </div>
         <div class="contact-section">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
+                <span class="light-icon">☀️</span>
+                <span class="dark-icon">🌙</span>
+            </button>
             <div class="contact-info">
                 <div class="contact-item">
                     <h3>Адрес</h3>
@@ -49,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <button onclick="toggleTheme()" class="theme-toggle">Переключить тему</button>
     </div>
+    <script src="contacts.js"></script>
 </body>
 </html>
